@@ -87,5 +87,22 @@ opencode
 The following tags are available on [Docker Hub](https://hub.docker.com/r/tgagor/opencode-cli):
 
 *   [`latest`](https://hub.docker.com/r/tgagor/opencode-cli/tags): The most recent, stable version of the OpenCode.
-*   [`v<no value>`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the OpenCode.
-*   [`v
+*   [`v1.2.27`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the OpenCode.
+*   [`v1.2`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
+*   [`v1`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
+
+## Security
+
+Images are automatically scanned for vulnerabilities. You can view the latest security report [here](https://github.com/tgagor/docker-opencode-cli/security/advisories).
+
+## Image sizes
+![Docker Image Size](https://img.shields.io/docker/image-size/tgagor/opencode-cli?arch=amd64&label=tgagor%2Fopencode-cli%20(amd64))
+![Docker Image Size](https://img.shields.io/docker/image-size/tgagor/opencode-cli?arch=arm64&label=tgagor%2Fopencode-cli%20(arm64))
+![Docker Image Size](https://img.shields.io/docker/image-size/tgagor/opencode-cli?arch=arm&label=tgagor%2Fopencode-cli%20(arm))
+
+
+
+
+## Images
+You can fetch docker image from:
+* [tgagor/opencode-cli](https://hub.docker.com/r/tgagor/opencode-cli)
