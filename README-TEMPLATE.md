@@ -87,9 +87,9 @@ opencode
 The following tags are available on [Docker Hub](https://hub.docker.com/r/tgagor/opencode-cli):
 
 *   [`latest`](https://hub.docker.com/r/tgagor/opencode-cli/tags): The most recent, stable version of the OpenCode.
-*   [`v{{ .opencode_CLI_VERSION }}`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the OpenCode.
-*   [`v{{ .opencode_CLI_VERSION | splitList "." | first }}.{{ .opencode_CLI_VERSION | splitList "." | rest | first }}`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
-*   [`v{{ .opencode_CLI_VERSION | splitList "." | first }}`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
+*   [`v{{ .OPENCODE_CLI_VERSION }}`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the OpenCode.
+*   [`v{{ .OPENCODE_CLI_VERSION | splitList "." | first }}.{{ .OPENCODE_CLI_VERSION | splitList "." | rest | first }}`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
+*   [`v{{ .OPENCODE_CLI_VERSION | splitList "." | first }}`](https://hub.docker.com/r/tgagor/opencode-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
 
 ## Security
 
