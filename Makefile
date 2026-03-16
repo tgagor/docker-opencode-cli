@@ -9,6 +9,9 @@ DOCKER_CMD ?= docker
 MAINTAINER ?= $(shell cat build.yaml| yq -r '.maintainer')
 IMAGES := $(shell cat build.yaml| yq -r '.images|keys[]')
 
+OPENCODE_CLI_VERSION ?= 1.
+export OPENCODE_CLI_VERSION
+
 # use numer of available CPUs to run multiple builds at the same time
 PARALLEL := $(shell $(DOCKER_CMD) info --format "{{ .NCPU }}")
 

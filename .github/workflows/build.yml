@@ -166,7 +166,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.35.0
         with:
-          image-ref: tgagor/opencode-ai:build-${{needs.build.outputs.tag_version}}
+          image-ref: tgagor/opencode-cli:build-${{needs.build.outputs.tag_version}}
           format: template
           template: "@/contrib/sarif.tpl"
           # don't fail
