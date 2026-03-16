@@ -1,0 +1,32 @@
+---
+
+prefix: tgagor
+maintainer: Tomasz Gągor <https://gagor.pro>
+
+labels:
+  org.opencontainers.image.licenses: GPL-2.0-only
+  org.opencontainers.image.url: https://hub.docker.com/repository/docker/tgagor/opencode-cli/general
+  org.opencontainers.image.documentation: https://github.com/tgagor/docker-opencode-cli/blob/master/README.md
+  org.opencontainers.image.title: Weekly updated OpenCode CLI Docker image
+  org.opencontainers.image.description: |
+    Those images are just standard OpenCode CLI base images, but:
+
+    1. Updated weekly for security.
+    2. Optimized for smaller size.
+
+platforms:
+  # - linux/arm/v7
+  - linux/amd64
+  # - linux/arm64
+
+images:
+  opencode-cli:
+    dockerfile: Dockerfile
+    args:
+      OPENCODE_CLI_VERSION: "{{ env \"OPENCODE_CLI_VERSION\" | default \"latest\" }}"
+    tags:
+      - opencode-cli:build-v{{ .tag }}
+      - opencode-cli:v{{ env "OPENCODE_CLI_VERSION" }}
+      - opencode-cli:v{{ env "OPENCODE_CLI_VERSION" | splitList "." | first }}
+      - opencode-cli:v{{ env "OPENCODE_CLI_VERSION" | splitList "." | first }}.{{ env "OPENCODE_CLI_VERSION" | splitList "." | rest | first }}
+      - opencode-cli:latest
