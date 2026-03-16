@@ -9,7 +9,7 @@ DOCKER_CMD ?= docker
 MAINTAINER ?= $(shell cat build.yaml| yq -r '.maintainer')
 IMAGES := $(shell cat build.yaml| yq -r '.images|keys[]')
 
-OPENCODE_CLI_VERSION ?= 1.
+OPENCODE_CLI_VERSION ?= $(shell curl -s https://registry.npmjs.org/opencode-ai | jq -r '.["dist-tags"].latest')
 export OPENCODE_CLI_VERSION
 
 # use numer of available CPUs to run multiple builds at the same time

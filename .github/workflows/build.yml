@@ -50,10 +50,6 @@ jobs:
       - name: Setup Template Dockerfiles
         uses: tgagor/template-dockerfiles@v0.16.2
 
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-
       - name: Guess next version
         if: github.ref == 'refs/heads/main'
         id: tag_version
@@ -75,7 +71,7 @@ jobs:
       - name: Discover OpenCode latest version
         id: opencode_version
         run: |
-          OPENCODE_CLI_VERSION=$(npm view opencode-ai version)
+          OPENCODE_CLI_VERSION=$(curl -s https://registry.npmjs.org/opencode-ai | jq -r '.["dist-tags"].latest')
           echo "OPENCODE_CLI_VERSION=${OPENCODE_CLI_VERSION}" >> $GITHUB_ENV
 
       - name: Just build on branches
